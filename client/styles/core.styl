@@ -1,0 +1,42 @@
+/* ========================================================================== 
+
+
+  Core - entry point for application
+
+  Author:     Stephen Zsolnai (http://www.zolla.co.uk)
+  Decription: Globally used .styl files are imported in order here. 
+              Other components are imported seperately via a grunt task dynamically.
+              
+              Frameworks:
+              Stylus (http://learnboost.github.io/stylus/)
+              Kuoto-swiss (http://kouto-swiss.io/docs.html)
+              Which is completely installed via grunt and has all the functionality available. The grid system is based on this.
+              
+
+              Axis css (http://roots.cx/axis/)
+              NOT completely installed. If features are needed then they are manually added.
+              eg: typography, settings and vertical-rhythm for baseline stuff.
+              Axis also has some out the box mixins and patterns. They can be added in manually too. Check out the docs.
+              All other files are components and loosly follow the BEM methodology (http://bem.info/method/)
+  Changelog:  2014/01/06 : File created.
+
+========================================================================== */
+
+
+//This globals file will be imported in modules files too so keep it light. Repeating code in compiled file...
+@import 'globals'
+
+
+//axis css files located in ./node_modules. Path has been shimmed in gruntfile
+@require "axis-css/axis/typography"
+@require "axis-css/axis/vertical-rhythm"
+
+@require "scaffolding"
+
+//meyer-reset()
+normalize()
+box-sizing-reset()
+establish-baseline('normalize')
+
+
+@import "brand"

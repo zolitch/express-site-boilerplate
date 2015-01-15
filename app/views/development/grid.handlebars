@@ -1,0 +1,496 @@
+
+{{!-- Some styles specific to this test grid --}}
+<style>
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+    .container .row:not(:first-child),
+    .container .row .row:not(:first-child),
+    .container .row--flush:not(:first-child),
+    .container .row--flush .row--flush:not(:first-child){
+      margin-top: 1em !important;
+      opacity: 0.8;
+    }
+
+    .container .row .row div[class*="col"] {
+      background: #aaa;
+    }
+
+  #gridpak{
+    z-index: 0;
+    padding: 0 1em; /*to match the padding on the centered-content. */
+  }
+  div[class*="col"] {
+    background: grey;
+    padding: 1em 0;
+    color: white;
+    text-align: center;
+    margin-bottom: .5em;
+  }
+  .toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+  }
+
+</style>
+
+<button class="toggle js-toggleGrid">Toggle Margin/flush</button>
+<div class="centered-content">
+  
+  
+  <div class="container">
+    <div class="row">
+      <div class="col--12">
+        <h2>Columns with margins</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col--12">
+        <h3>Single level columns</h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--2">
+        2
+      </div>
+      <div class="col--2">
+        2
+      </div>
+      <div class="col--2">
+        2
+      </div>
+      <div class="col--2">
+        2
+      </div>
+      <div class="col--2">
+        2
+      </div>
+      <div class="col--2">
+        2
+      </div>
+    </div>
+    <div class="row">
+      <div class="col--10">
+        10
+      </div>
+      <div class="col--2">
+        2
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--3">
+        3
+      </div>
+      <div class="col--3">
+        3
+      </div>
+      <div class="col--3">
+        3
+      </div>
+      <div class="col--3">
+        3
+      </div>
+      <div class="col--3">
+        3
+      </div>
+      <div class="col--3">
+        3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col--9">
+        9
+      </div>
+      <div class="col--3">
+        3
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--4">
+        4
+      </div>
+      <div class="col--4">
+        4
+      </div>
+      <div class="col--4">
+        4
+      </div>
+      <div class="col--4">
+        4
+      </div>
+    </div>
+    <div class="row">
+      <div class="col--4">
+        4
+      </div>
+      <div class="col--8">
+        8
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--5">
+        5
+      </div>
+      <div class="col--7">
+        7
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--6">
+        6
+      </div>
+      <div class="col--6">
+        6
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--5">
+        5
+      </div>
+      <div class="col--7">
+        7
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--4">
+        4
+      </div>
+      <div class="col--8">
+        8
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--3">
+        3
+      </div>
+      <div class="col--9">
+        9
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col--2">
+        2
+      </div>
+      <div class="col--10">
+        10
+      </div>
+    </div>
+  
+
+  
+  
+    <div class="row">
+      <div class="col--12">
+        <h3>Second level nested columns</h3>
+      </div>
+    </div>
+  
+  
+
+
+  
+    <div class="row">
+      <div class="col--10">
+          
+        <!-- nested columns. 2nd level -->
+        <div class="row">
+          <div class="col--3">
+            3
+          </div>
+          <div class="col--9">
+            9
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--4">
+            4
+          </div>
+          <div class="col--8">
+            8
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--5">
+            5
+          </div>
+          <div class="col--7">
+            7
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--6">
+            6
+          </div>
+          <div class="col--6">
+            6
+          </div>
+        </div>
+        <!-- End of nested -->
+
+      </div>
+      <div class="col--2">
+          2
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col--9">
+        
+        <!-- nested columns. 2nd level -->
+        <div class="row">
+          <div class="col--2">
+            2
+          </div>
+          <div class="col--10">
+            10
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--3">
+            3
+          </div>
+          <div class="col--9">
+            9
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--4">
+            4
+          </div>
+          <div class="col--8">
+            8
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--5">
+            5
+          </div>
+          <div class="col--7">
+            7
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--6">
+            6
+          </div>
+          <div class="col--6">
+            6
+          </div>
+        </div>
+        <!-- End of nested -->
+  
+      </div>
+      <div class="col--3">
+        3
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col--8">
+
+        <!-- nested columns. 2nd level -->
+        <div class="row">
+          <div class="col--2">
+            2
+          </div>
+          <div class="col--10">
+            10
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--3">
+            3
+          </div>
+          <div class="col--9">
+            9
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--4">
+            4
+          </div>
+          <div class="col--8">
+            8
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--5">
+            5
+          </div>
+          <div class="col--7">
+            7
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--6">
+            6
+          </div>
+          <div class="col--6">
+            6
+          </div>
+        </div>
+        <!-- End of nested -->
+  
+      </div>
+      <div class="col--4">
+        4
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col--7">
+
+        <!-- nested columns. 2nd level -->
+        <div class="row">
+          <div class="col--2">
+            2
+          </div>
+          <div class="col--10">
+            10
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--3">
+            3
+          </div>
+          <div class="col--9">
+            9
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--4">
+            4
+          </div>
+          <div class="col--8">
+            8
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--5">
+            5
+          </div>
+          <div class="col--7">
+            7
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--6">
+            6
+          </div>
+          <div class="col--6">
+            6
+          </div>
+        </div>
+        <!-- End of nested -->
+
+      </div>
+      <div class="col--5">
+        5
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col--6">
+      
+        <!-- nested columns. 2nd level -->
+        <div class="row">
+          <div class="col--2">
+            2
+          </div>
+          <div class="col--10">
+            10
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--3">
+            3
+          </div>
+          <div class="col--9">
+            9
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--4">
+            4
+          </div>
+          <div class="col--8">
+            8
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--5">
+            5
+          </div>
+          <div class="col--7">
+            7
+          </div>
+        </div>
+        <div class="row">
+          <div class="col--6">
+            6
+          </div>
+          <div class="col--6">
+            6
+          </div>
+        </div>
+        <!-- End of nested -->
+  
+      </div>
+      <div class="col--6">
+        6
+      </div>
+    </div>
+
+  </div> <!-- container end -->
+  
+</div> <!-- centered-content end -->
+
+
+
+{{#if isDevelopment}}
+<link rel="stylesheet" href="development/gridpack/gridpak.css">
+<script src="development/gridpack/gridpak.js"></script>
+<script>
+  setTimeout(function(){
+    var $rows = $('.row');
+    $('.js-toggleGrid').on('click', function(e) {
+      if ($rows.hasClass('row--flush')) {
+        $rows.removeClass('row--flush')
+          .addClass('row');
+      } else {
+        $rows.removeClass('row')
+          .addClass('row--flush');
+      }
+    });
+  }, 500);
+</script>
+{{/if}}
+
+
+
+
+
+
+
+

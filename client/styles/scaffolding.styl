@@ -1,0 +1,96 @@
+/* ========================================================================== 
+
+
+  Scaffolding and structure
+
+  Author:     Stephen Zsolnai (http://www.zolla.co.uk)
+  Decription: Wrapper classes to make it easy to create layouts. 
+  						Based on the grid system of http://kouto-swiss.io/docs.html#system
+  						The grid classes can also be extended straight inside modules. the col--* classes should only really
+  						be used for layouts as they are not semantic.
+  Changelog:  2014/01/06 : File created.
+
+========================================================================== */
+
+colMarginReset()
+	margin-left 0
+	margin-right 0
+	
+	
+/* Grid config set up. 
+		Kuoto cleverly uses this for all future grids. 
+		The down side is we only get kind of grid by the looks of it. :-(
+========================================================================== */	
+gs("fluid", 12, 6.5%, 2%) // just over 8.33% per col--1 measure (8.5% to be precice equating to 102% total to match row)
+
+
+/* centered-content. This will stop expanding at certain breakpoints and be centered.
+		Also, padded on the sides small screens
+========================================================================== */
+.centered-content
+	padding 0 1em
+	+media-query(only screen, min-width $breakThree)
+		padding 0
+		margin 0 auto
+		width $maxWidthSmallMonitor
+
+/* Row and Columns
+========================================================================== */
+//mobile
+.row
+	row()
+	clearfix()
+	+media-query(only screen, max-width $breakOne)
+		width 100%
+		colMarginReset()
+
+//no margins and 100% width overide for columns inside this modified row.
+.row--flush
+	@extend .row
+	colMarginReset()
+	width 100%
+		
+/* fluid container greater than $breakTwo
+========================================================================== */
+	+media-query(only screen, min-width $breakOne)
+		for n in (1..12)
+			.col--{n}
+				col(6)
+				.row--flush & 
+					width 50%
+					colMarginReset()
+		for n in (7..12)
+			.col--{n}
+				col(12)
+				.row--flush & 
+					width 100%
+					colMarginReset()
+			
+
+/* fluid container between $breakTwo and $breakThree
+========================================================================== */
+	+media-query(only screen, min-width $breakOne, max-width $breakTwo)
+	//full width for smaller columns when preceded thier bigger counterparts
+		.col--10 + .col--2
+		.col--9 + .col--3
+		.col--8 + .col--4
+		.col--7 + .col--5
+			//manually adding this calculated width for now. TODO: try to calculate from existing value.
+			width 98.16%
+			.row--flush &
+				width 100%
+				colMarginReset()
+				
+/* fluid container greater than $breakThree
+========================================================================== */
+	+media-query(only screen, min-width $breakTwo)
+		for n in (1..12)
+			.col--{n}
+				col(n)
+				.row--flush & 
+					width percent(n, 12) + '%'
+					colMarginReset()
+				
+
+
+

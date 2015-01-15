@@ -1,0 +1,156 @@
+/* ========================================================================== 
+
+
+  Helper classes
+
+  Author:     Stephen Zsolnai (http://www.zolla.co.uk)
+  Decription: global helpers
+
+========================================================================== */
+
+
+
+/* Some extra page resets
+    ref: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+  ========================================================================== */  
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+    background: default-color-light;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: default-color-light;
+    color: #fff;
+    text-shadow: none;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+    resize: vertical;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+
+
+
+	
+		
+// positioning
+.margin-auto
+	margin auto
+
+strong, .strong
+	font-weight bold
+	
+
+.pull-right
+	float right
+	
+.pull-left
+	float left
+
+
+.text-center
+	text-align center
+	
+.text-left
+	text-align left
+	
+.text-right
+	text-align right
+	
+.clear-left
+	clear left
+	
+.clear-right
+	clear right
+	
+.clear-both
+	clear both
+	
+
+
+
+
+.hidden-l
+	display none !important
+
+body
+	.visible
+		display block
+	.hidden
+		display none
+		
+	+media-query(only screen, max-width $breakOne)
+		.hidden-s
+			display none
+		.visible-s
+			display block
+			
+	+media-query(only screen, min-width $breakOne, max-width $breakThree)
+		.hidden-m
+			display none
+		.visible-l
+			display block
+			
+	+media-query(only screen, min-width $breakThree)
+		.hidden-l
+			display none
+		.visible-l
+			display block
+
+
+.full-width
+	width 100%

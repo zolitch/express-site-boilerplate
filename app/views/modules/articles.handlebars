@@ -1,0 +1,15 @@
+<section class="list">
+  <h1 class="visuallyhidden">Article List</h1>
+  <ul class="list__wrapper">
+    {{#each articles }}
+    <li class="list__item">
+      <a class="list__link" href="{{url}}">
+        <img class="list__img" src="{{imgSrc}}" alt="{{imgAlt}}">
+        <h2 class="list__title">{{title}}</h2>
+        <p class="list__sur-title">{{author}}</p>
+        <div class="list__summary">{{{summary}}}</div>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</section>

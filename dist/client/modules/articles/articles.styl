@@ -1,0 +1,93 @@
+@import 'globals'
+
+/* Single Article
+========================================================================== */
+.article
+  &__banner
+    position relative
+  &__img
+    max-width 100%
+  &__title
+    h1
+      margin-top .4em
+      margin-bottom 0
+    p
+      set-font-size(11px)
+      line-height 1
+      margin -0.5em 0 2.5em
+  &__content
+    padding-top 0
+    overflow auto
+    > p 
+      margin-top 0
+    
+  +media-query(only screen, min-width $breakTwo)
+    &__title
+      position absolute
+      bottom 0
+      left 0
+      padding 0 1em
+      width 100%
+      color white
+      background-image linear-gradient( to top, black, white 100% )
+    &__content
+      margin-top 1em
+      
+
+    
+/* Generic list of items. Articles etc...
+========================================================================== */
+.list
+  &__wrapper
+    padding 0
+    margin 0
+    list-style none
+  &__item
+    clearfix()
+    padding-bottom .5em
+    margin-bottom .5em
+    border-bottom 1px solid default-color-light
+  &__link
+    text-decoration none
+    &:hover
+      .list__title
+        text-decoration underline
+      .list__img
+        .no-touch &
+          opacity 1
+  &__img
+    max-width 100%
+    .no-touch &
+      opacity .8
+      transition opacity .3s linear
+  &__title
+    margin 0
+  &__sur-title
+    margin-top 0
+    set-font-size(11px)
+    
+
+  +media-query(only screen, min-width $breakOne, max-width $breakTwo)
+    //Iterations inside columns
+    for n in (7..12)
+      .col--{n} &
+      .col--9 + .col--3 &
+      .col--8 + .col--4 &
+      .col--7 + .col--5 &
+        &__img
+          float left 
+          width 39.3%
+          margin-right 1em
+          
+  +media-query(only screen, min-width $breakTwo)
+    for n in (6..12)
+      .col--{n} &
+        &__img
+          float left 
+          width 39.3%
+          margin-right 1em
+      
+
+
+
+  
