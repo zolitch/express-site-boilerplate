@@ -1,24 +1,15 @@
-##Stadion Front end
+##Express Site boilerplate Front end
 =======
 
-Front-end site for Stadion Digital Sports platform
+Front-end site and starting point for new projects.
+
+Based on the good work done at: https://github.com/petecoop/generator-express
 
 ###  Folder structure
+TODO.
 
 ### Build
-#### Develpment build.
-Build step to generate compiled css and javascript to run this front-end site.
-Source mappings etc enabled
-- dest : /build
+Loads of comples grunt tasks currently in place that were specific to the project this was pulled from.
 
-#### Production asset generation
-Build step to generate:
-Base css asset - containing base styles, structure, branding etc.
-    - src: /client/styles
-Module css assets - Individual assets
-    - src: /client/modules/<module_name>/<module_name>.styl
-
-Seperate css and javascript assets for the platform will be sent to dest folder. These can then be copied to the production site. (Located outside of this solution)
-
-#### Production assets build
-Build step to combine and minify generated assets. This will run on the production site and create single js and css assets.
+### More info to follow...
+This is currently a rough and ready starting point.
