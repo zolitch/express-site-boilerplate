@@ -9,7 +9,7 @@ var config = {
     isDevelopment: true,
     apiRoot: 'http://private-003c2-stephenzsolnai.apiary-mock.com/',
     app: {
-      name: 'digitalsportsplatform-fe'
+      name: 'express-boilerplate'
     },
     port: port,
   },
@@ -19,7 +19,7 @@ var config = {
     isDevelopment: false,
     apiRoot: 'http://private-003c2-stephenzsolnai.apiary-mock.com/',
     app: {
-      name: 'digitalsportsplatform-fe'
+      name: 'express-boilerplate'
     },
     port: port,
   },
@@ -29,7 +29,7 @@ var config = {
     isDevelopment: false,
     apiRoot: null,
     app: {
-      name: 'digitalsportsplatform-fe'
+      name: 'express-boilerplate'
     },
     port: port
   }
